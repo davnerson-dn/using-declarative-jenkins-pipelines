@@ -9,7 +9,11 @@ pipeline {
     }
     stages {
         stage('Build') {
-            agent 'master'
+            agent {
+                node {
+                    label 'master'
+                }
+            }
             environment {
                 LOG_LEVEL='INFO'
             }
