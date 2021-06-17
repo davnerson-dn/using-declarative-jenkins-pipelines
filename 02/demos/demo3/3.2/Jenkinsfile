@@ -36,7 +36,7 @@ pipeline {
             tokenCredentialId: 'jenkins-app', 
             color: "good", 
             message: "Release ${env.RELEASE}, success: ${currentBuild.fullDisplayName}.", 
-            channel: "david-jenkins-message", 
+            channel: "devops-notifications", 
             botUser: true)
       }
    }
