@@ -33,7 +33,7 @@ pipeline {
       success {
          archiveArtifacts 'test-results.txt'
          slackSend(
-            tokenCredentialId: 'jenkins-office-app', 
+            tokenCredentialId: 'jenkins-app', 
             color: "good", 
             message: "Release ${env.RELEASE}, success: ${currentBuild.fullDisplayName}.", 
             channel: "devops-notifications", 
