@@ -37,14 +37,14 @@ pipeline {
    post {
       success {
          archiveArtifacts 'test-results.txt'
-         slackSend tokenCredentialsId: 'jenkins-app', 
+         slackSend tokenCredentialId: 'jenkins-app', 
                    channel: 'david-jenkins-messages',
                    botUser: true,
                    color: 'good',
                    message: "Release ${env.RELEASE}, success: ${currentBuild.fullDisplayName}."
       }
       failure {
-         slackSend tokenCredentialsId: 'jenkins-app',
+         slackSend tokenCredentialId: 'jenkins-app',
                    channel: 'david-jenkins-messages',
                    botUser: true,
                    color: 'danger',
